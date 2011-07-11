@@ -94,7 +94,7 @@ module Sorcery
           def change_password!(new_password)
             clear_reset_password_token
             self.send(:"#{sorcery_config.password_attribute_name}=", new_password[:password])
-            self.send(:"#{sorcery_config.password_attribute_name + _confirmation}=", new_password[:password_confirmation])
+            self.send(:"#{sorcery_config.password_attribute_name + '_confirmation'}=", new_password[:password_confirmation])
             save
           end
 
